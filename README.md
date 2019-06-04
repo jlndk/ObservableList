@@ -15,7 +15,7 @@ The package can be installed with NPM or Yarn.
 
 **Yarn**
 ```
-yarn install @jlndk/ObservableList
+yarn add @jlndk/ObservableList
 ```
 
 **NPM**
@@ -28,16 +28,15 @@ See [Wiki](https://github.com/jlndk/ObservableList/wiki/Usage).
 
 **TL;DR:**
 ```js
-import {list} from '@jlndk/ObservableList';
-const list = list();
-// Can also be initialized with initial values like:
-// const list = list(["initial", "values"]);
-list.subscribe(updatedList => {
+import {list} from '@jlndk/observable-list';
+const list = list(); // or list(["initial", "values"]);
+const unsubscribe = list.subscribe(updatedList => {
     //Do what you want with updated list...
+    console.log(updatedList[0]); //new value
 });
-
-//Since ObservableList inherits from Array, all of those methods, such as filter, reduce and push are available.
+list.push("new value");
 ```
+**Notice: Make sure to call the `unsubscribe` method when your component is destroyed to prevent memory leaks.**
 
 ## Contributing
 1. Fork it!
