@@ -1,0 +1,9 @@
+{
+  "name": "@jlndk/ObservableList",
+  "version": "0.1.0",
+  "description": "Lightweight, powerful & framework-agnostic JavaScript state management in less than 1.5KB!",
+  "main": "ObservableList.js",
+  "repository": "git@github.com:jlndk/ObservableList.git",
+  "author": "Jonas Lindenskov Nielsen <lindenskov.nielsen@gmail.com>",
+  "license": "MIT"
+}
