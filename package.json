@@ -1,6 +1,6 @@
 {
     "name": "@jlndk/observable-list",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Lightweight, powerful & framework-agnostic JavaScript state management in less than 1.5KB!",
     "main": "ObservableList.js",
     "scripts": {
