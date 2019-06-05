@@ -42,6 +42,16 @@ export class ObservableList extends Array {
     }
 
     /**
+     * Accepts a callback which modifies the list.
+     *
+     * @param  {Function} callback A function, which is given the current and must return a list (optionally modified).
+     */
+    update(callback) {
+        const newList = callback(this);
+        this.replaceAll(newList);
+    }
+
+    /**
      * Should return the data (as an object or array) which should be serialized.
      * Can be overridden by a subclass if it contains other values that should be persisted.
      *
