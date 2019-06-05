@@ -38,7 +38,10 @@ export class ObservableList extends Array {
      * @param  {Iterable} items An iterable collection of the items which this list should contain.
      */
     replaceAll(items) {
+        //Make sure the list is emptied (in case items is empty)
+        this.length = 0;
         this.splice(0, items.length, ...items);
+        this._invalidate();
     }
 
     /**
@@ -123,7 +126,7 @@ export function list(items) {
 
 export function persist(list, name) {
     let prevData = localStorage.getItem(name);
-    if(prevData != null) {
+    if(prevData !== null) {
         list._unserialize(JSON.parse(prevData));
     }
     list.subscribe(value => {
